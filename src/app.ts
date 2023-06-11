@@ -1,6 +1,6 @@
-import express, { Application, Request, Response } from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import express, { Application, Request, Response } from 'express'
 
 const app: Application = express()
 dotenv.config()
