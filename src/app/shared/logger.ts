@@ -1,3 +1,4 @@
+import path from 'path'
 import winston from 'winston'
 
 export const logger = winston.createLogger({
@@ -5,7 +6,10 @@ export const logger = winston.createLogger({
   format: winston.format.json(),
   transports: [
     new winston.transports.Console(),
-    new winston.transports.File({ filename: 'logs/info.log', level: 'info' }),
+    new winston.transports.File({
+      filename: path.join(process.cwd(), 'logs', 'winston', 'info.log'),
+      level: 'info',
+    }),
   ],
 })
 
@@ -14,6 +18,9 @@ export const errorLogger = winston.createLogger({
   format: winston.format.json(),
   transports: [
     new winston.transports.Console(),
-    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({
+      filename: path.join(process.cwd(), 'logs', 'winston', 'error.log'),
+      level: 'error',
+    }),
   ],
 })
