@@ -1,6 +1,12 @@
-{"level":"info","message":"🛢 Database is connected successfully"}
-{"level":"info","message":"🛢 application running port 5000"}
-{"level":"info","message":"🛢 Database is connected successfully"}
-{"level":"info","message":"🛢 application running port 5000"}
-{"level":"info","message":"🛢 Database is connected successfully"}
-{"level":"info","message":"🛢 application running port 5000"}
+2023-06-11T13:52:40.713Z [PH] info: 🛢 Database is connected successfully 
+
+2023-06-11T13:52:40.719Z [PH] info: 🛢 application running port 5000 
+
+2023-06-11T13:53:09.821Z [PH] info: 🛢 Database is connected successfully
+2023-06-11T13:53:09.826Z [PH] info: 🛢 application running port 5000
+2023-06-11T13:53:34.707Z [PH] info: 🛢 Database is connected successfully
+2023-06-11T13:53:34.716Z [PH] info: 🛢 application running port 5000
+2023-06-11T13:55:04.379Z [PH] info: 🛢 Database is connected successfully
+2023-06-11T13:55:04.384Z [PH] info: 🛢 application running port 5000
+2023-06-11T13:55:14.448Z [PH] info: 🛢 Database is connected successfully
+2023-06-11T13:55:14.455Z [PH] info: 🛢 application running port 5000
