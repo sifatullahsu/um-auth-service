@@ -8,19 +8,19 @@ const userSchema = new Schema<iUser>(
     id: {
       type: String,
       required: true,
-      unique: true,
+      unique: true
     },
     role: {
       type: String,
-      required: true,
+      required: true
     },
     password: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   {
-    timestamps: true,
+    timestamps: true
   }
 )
 

@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import app from './app'
-import { errorLogger, logger } from './app/shared/logger'
+import { errorLogger, logger } from './shared/logger'
 
 async function main() {
   try {
