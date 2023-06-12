@@ -8,11 +8,8 @@ const customFormat = printf(({ level, message, timestamp }) => {
 })
 
 const customTransports = (name: string) => {
-  const basic = [new transports.Console()]
-
   return process.env.NODE_ENV === 'production'
     ? [
-        ...basic,
         new DailyRotateFile({
           filename: path.join(
             process.cwd(),
@@ -26,7 +23,7 @@ const customTransports = (name: string) => {
           maxFiles: '14d'
         })
       ]
-    : basic
+    : [new transports.Console()]
 }
 
 export const logger = createLogger({
