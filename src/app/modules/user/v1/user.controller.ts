@@ -1,7 +1,22 @@
-import { Request, Response } from 'express'
+import { Request, RequestHandler, Response } from 'express'
+import catchAsync from '../../../../shared/catchAsync'
 import { createUserDB } from './user.service'
 
-export const createUser = async (req: Request, res: Response) => {
+export const createUser: RequestHandler = catchAsync(
+  async (req: Request, res: Response) => {
+    const data = req.body
+    const result = await createUserDB(data)
+
+    res.status(200).json({
+      success: true,
+      message: 'User created successfully.',
+      data: result
+    })
+  }
+)
+
+// legacy
+export const createUserLegacy: RequestHandler = async (req, res, next) => {
   try {
     const data = req.body
     const result = await createUserDB(data)
@@ -12,9 +27,6 @@ export const createUser = async (req: Request, res: Response) => {
       data: result
     })
   } catch (error) {
-    res.status(400).json({
-      sucess: false,
-      message: 'Failed to create user.'
-    })
+    next(error)
   }
 }
