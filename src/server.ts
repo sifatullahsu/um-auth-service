@@ -1,25 +1,26 @@
 import mongoose from 'mongoose'
 import app from './app'
-import { errorLogger, logger } from './shared/logger'
+import config from './config'
+import { errorLogger, infoLogger } from './shared/logger'
 
 // process.on('uncaughtException', error => {
 //   errorlogger.error(error);
 //   process.exit(1);
 // });
 
-// let server: Server;
+// let server: Server
 
 async function main() {
   try {
     // database connection
-    await mongoose.connect(process.env.DB_URL as string)
-    logger.info(`🛢 Database is connected successfully`)
+    await mongoose.connect(config.database_url as string)
+    infoLogger(`🛢 Database is connected successfully`)
 
     // app listen
-    const port = process.env.PORT || 5000
-    app.listen(port, () => logger.info(`🛢 application running port ${port}`))
+    const port = config.port || 5000
+    app.listen(port, () => infoLogger(`🛢 application running port ${port}`))
   } catch (err) {
-    errorLogger.error('Failed to connect database', err)
+    errorLogger('Failed to connect database', err)
   }
 
   // process.on('unhandledRejection', error => {

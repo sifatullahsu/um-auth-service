@@ -1,5 +1,6 @@
 import { ErrorRequestHandler } from 'express'
 import { ZodError } from 'zod'
+import config from '../../config'
 import ApiError from '../../errors/ApiError'
 import handleMongooseError from '../../errors/handleMongooseError'
 import handleZodError from '../../errors/handleZodError'
@@ -7,7 +8,7 @@ import { iErrorMessages } from '../../errors/interface'
 import { errorLogger } from '../../shared/logger'
 
 const errorHandler: ErrorRequestHandler = (error, req, res, next) => {
-  errorLogger.error('error handler', error)
+  errorLogger(error)
 
   let status = 500
   let message = 'Something went wrong !'
@@ -34,7 +35,7 @@ const errorHandler: ErrorRequestHandler = (error, req, res, next) => {
     success: false,
     message,
     errorMessages,
-    stack: process.env.NODE_ENV !== 'production' ? error?.stack : null
+    stack: config.env !== 'production' ? error?.stack : null
   })
 
   next()
