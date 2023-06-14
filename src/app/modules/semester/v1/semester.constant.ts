@@ -18,3 +18,9 @@ export const semesterMonth: iSemesterMonth[] = [
   'November',
   'December'
 ]
+
+export const semesterTitleCodeMapper: { [key: string]: string } = {
+  Autumn: '01',
+  Summer: '02',
+  Fall: '03'
+}
