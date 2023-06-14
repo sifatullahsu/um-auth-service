@@ -1,30 +1,6 @@
 import { model, Schema } from 'mongoose'
-import {
-  iSemester,
-  iSemesterCode,
-  iSemesterModel,
-  iSemesterMonth,
-  iSemesterTitle
-} from './semester.interface'
-
-const semesterTitle: iSemesterTitle[] = ['Autumn', 'Summer', 'Fall']
-
-const semesterCode: iSemesterCode[] = ['01', '02', '03']
-
-const semesterMonth: iSemesterMonth[] = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
-]
+import { semesterCode, semesterMonth, semesterTitle } from './semester.constant'
+import { iSemester, iSemesterModel } from './semester.interface'
 
 const semesterSchema = new Schema<iSemester, iSemesterModel>({
   title: {

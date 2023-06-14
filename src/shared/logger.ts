@@ -12,12 +12,7 @@ const customTransports = (name: string) => {
   return config.env === 'production'
     ? [
         new DailyRotateFile({
-          filename: path.join(
-            process.cwd(),
-            'logs',
-            name,
-            `${name}-%DATE%.log`
-          ),
+          filename: path.join(process.cwd(), 'logs', name, `${name}-%DATE%.log`),
           datePattern: 'YYYY-MM-DD-HH',
           zippedArchive: true,
           maxSize: '20m',
