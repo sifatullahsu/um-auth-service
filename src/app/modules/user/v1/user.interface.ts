@@ -6,4 +6,4 @@ export type iUser = {
   password: string
 }
 
-export type UserModel = Model<iUser>
+export type iUserModel = Model<iUser>

@@ -1,9 +1,4 @@
-import {
-  iErrorMessages,
-  iErrorResponse,
-  iZodError,
-  iZodIssue
-} from './interface'
+import { iErrorMessages, iErrorResponse, iZodError, iZodIssue } from './interface'
 
 const handleZodError = (error: iZodError): iErrorResponse => {
   const values = error.issues
